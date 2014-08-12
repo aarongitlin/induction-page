@@ -1,0 +1,1297 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0147)http://internal.tigerspike.com/induction/?n=Kristof&nb=Tony%20Crosby&nbt=developers&c=New%20York&e=kristof.dziemianczyk@tigerspike.com&d=developers -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<title>Welcome to Tigerspike</title>
+
+		<link rel="stylesheet" href="./developer-intro_files/styles.css">
+		<script src="./developer-intro_files/jquery.min.js"></script>
+		<script>
+			var QueryString = function () {
+			  // This function is anonymous, is executed immediately and
+			  // the return value is assigned to QueryString!
+			  var query_string = {};
+			  var query = window.location.search.substring(1);
+			  var vars = query.split("&");
+			  for (var i=0;i<vars.length;i++) {
+				var pair = vars[i].split("=");
+					// If first entry with this name
+				if (typeof query_string[pair[0]] === "undefined") {
+				  query_string[pair[0]] = pair[1];
+					// If second entry with this name
+				} else if (typeof query_string[pair[0]] === "string") {
+				  var arr = [ query_string[pair[0]], pair[1] ];
+				  query_string[pair[0]] = arr;
+					// If third or later entry with this name
+				} else {
+				  query_string[pair[0]].push(pair[1]);
+				}
+			  }
+				return query_string;
+			} ();
+
+
+			function urldecode(str) {
+			  //       discuss at: http://phpjs.org/functions/urldecode/
+			  //      original by: Philip Peterson
+			  //      improved by: Kevin van Zonneveld (http://kevin.vanzonneveld.net)
+			  //      improved by: Kevin van Zonneveld (http://kevin.vanzonneveld.net)
+			  //      improved by: Brett Zamir (http://brett-zamir.me)
+			  //      improved by: Lars Fischer
+			  //      improved by: Orlando
+			  //      improved by: Brett Zamir (http://brett-zamir.me)
+			  //      improved by: Brett Zamir (http://brett-zamir.me)
+			  //         input by: AJ
+			  //         input by: travc
+			  //         input by: Brett Zamir (http://brett-zamir.me)
+			  //         input by: Ratheous
+			  //         input by: e-mike
+			  //         input by: lovio
+			  //      bugfixed by: Kevin van Zonneveld (http://kevin.vanzonneveld.net)
+			  //      bugfixed by: Rob
+			  // reimplemented by: Brett Zamir (http://brett-zamir.me)
+			  //             note: info on what encoding functions to use from: http://xkr.us/articles/javascript/encode-compare/
+			  //             note: Please be aware that this function expects to decode from UTF-8 encoded strings, as found on
+			  //             note: pages served as UTF-8
+			  //        example 1: urldecode('Kevin+van+Zonneveld%21');
+			  //        returns 1: 'Kevin van Zonneveld!'
+			  //        example 2: urldecode('http%3A%2F%2Fkevin.vanzonneveld.net%2F');
+			  //        returns 2: 'http://kevin.vanzonneveld.net/'
+			  //        example 3: urldecode('http%3A%2F%2Fwww.google.nl%2Fsearch%3Fq%3Dphp.js%26ie%3Dutf-8%26oe%3Dutf-8%26aq%3Dt%26rls%3Dcom.ubuntu%3Aen-US%3Aunofficial%26client%3Dfirefox-a');
+			  //        returns 3: 'http://www.google.nl/search?q=php.js&ie=utf-8&oe=utf-8&aq=t&rls=com.ubuntu:en-US:unofficial&client=firefox-a'
+			  //        example 4: urldecode('%E5%A5%BD%3_4');
+			  //        returns 4: '\u597d%3_4'
+
+			  return decodeURIComponent((str + '')
+				.replace(/%(?![\da-f]{2})/gi, function () {
+				  // PHP tolerates poorly formed escape sequences
+				  return '%25';
+				})
+				.replace(/\+/g, '%20'));
+			}
+		</script>
+
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$('#param_name').html(urldecode(QueryString.n));
+				$('#param_neighbor').html(urldecode(QueryString.nb));
+				$('#param_neighbor_type').html(urldecode(QueryString.nbt));
+				$('#param_city').html(urldecode(QueryString.c));
+				$('#param_email').html(urldecode(QueryString.e));
+					$('#param_email_link').attr("href", "mailto:"+urldecode(QueryString.e));
+
+				var dept = urldecode(QueryString.d);
+
+				$(".param_"+dept).show();
+			});
+		</script>
+
+		<style>
+			.param_block{
+				display:none;
+			}
+		</style>
+	</head>
+
+	<body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" data-pinterest-extension-installed="cr1.3.3">
+
+			<table border="0" cellpadding="0" cellspacing="0" width="100%" id="bodyTable">
+
+				<tbody><tr>
+
+					<td align="center" valign="top">
+
+
+
+
+						<!-- BEGIN CONTAINER -->
+
+						<table border="0" cellpadding="0" cellspacing="0" width="100%">
+
+							<tbody><tr>
+
+								<td align="center" valign="top" style="margin-bottom:0; padding-bottom:0;">
+
+
+
+
+
+									<!-- SECTION 1 -->
+
+									<table border="0" cellpadding="20" cellspacing="0" width="100%">
+
+										<tbody><tr>
+
+											<td align="center" valign="top" style="padding-bottom:50px;">
+
+
+
+
+
+												<!-- EMAIL LOGO	-->
+
+												<table border="0" cellpadding="0" cellspacing="0" width="100%" id="template-width" class="bodyContent">
+
+													<tbody><tr>
+
+														<td align="left" style="display:block; padding-top:50px; padding-bottom:50px;">
+
+															<a href="http://www.tigerspike.com/" style="text-decoration:none;"><img src="./developer-intro_files/getfile.ashx" width="183"></a>
+
+														</td>
+
+													</tr>
+
+												</tbody></table>
+
+
+
+
+
+												<!-- HERO IMAGE -->
+
+												<table border="0" cellpadding="0" cellspacing="0" width="100%" id="template-width" class="bodyContent">
+
+													<tbody><tr>
+
+														<td align="left" valign="top" width="100%" class="template-feature-container">
+
+															<table border="0" cellpadding="0" cellspacing="0" width="100%">
+
+														 		<tbody><tr>
+
+														 			<td align="left" style="padding-top:0px; width:100%;" class="largeImage">
+
+														 				<img src="./developer-intro_files/getfile(1).ashx" alt="Designer" width="600">
+
+														 			</td>
+
+														 		</tr>
+
+															 </tbody></table>
+
+														 </td>
+
+													 </tr>
+
+												 </tbody></table>
+
+
+
+
+												 <!-- NEWSLETTER INTRODUCTION -->
+
+												 <table border="0" cellpadding="0" cellspacing="0" width="100%" id="template-width" class="bodyContent">
+
+												 	<tbody><tr>
+
+												 		<td align="left" style="padding-top:30px; padding-bottom:30px; display:block;">
+
+												 			<h2>Hi <span id="param_name">Kristof</span>, welcome to Tigerspike!</h2>
+
+												 			<span class="bodyContent">
+
+																<p>
+																We’re really happy to have you on board and we think you’ll be a great addition to the team. There are a couple of things to prepare for, covering your first week. Principal among those to discuss on Tuesday 1st of July, is your schedule for the following week and to ensure that there are a number of introductory sessions lined-up. In lieu of that discussion, here are some of the big ticket items to muse on or refer back to whilst you settle in.
+																</p>
+
+															</span>
+
+															<h3>Shane Allen – Design Director, Melbourne</h3>
+
+														</td>
+
+													</tr>
+
+												</tbody></table>
+
+
+
+
+												<!-- HEADER -->
+
+												<table border="0" cellpadding="0" cellspacing="0" width="100%" id="template-width" class="bodyContent">
+
+													<tbody><tr>
+
+														<td align="left" class="topic-break">
+
+															<h4>Some useful things to know...
+
+															</h4>
+
+														</td>
+
+													</tr>
+
+												</tbody></table>
+
+
+
+
+												<!-- USEFUL THINGS TO KNOW -->
+
+												<table border="0" cellpadding="0" cellspacing="0" width="100%" id="template-width" class="bodyContent">
+
+													<tbody><tr>
+
+														<!-- COLUMN 1 -->
+
+														<td align="left" valign="top" width="33%" class="templateColumnContainer" style="border-bottom:1px solid #BBBBBB;">
+
+															<table border="0" cellpadding="0" cellspacing="0" width="100%">
+
+																<tbody><tr>
+
+																	<td align="left" valign="top" class="col-1-content">
+
+																		<img src="./developer-intro_files/getfile(2).ashx" width="40">
+
+																		<h2 style="padding-top:15px;">First Day</h2>
+
+																		<h3>11:00am</h3>
+
+																		<span class="bodyContent">
+																			<p>
+																			Please take your time getting in on your first day. We won't expect you before&nbsp;11:00am.
+																			</p>
+																		</span>
+
+																	</td>
+
+																</tr>
+
+															</tbody></table>
+
+														</td>
+
+														<!-- COLUMN 2 -->
+
+														<td align="left" valign="top" width="33%" class="templateColumnContainer" style="border-bottom:1px solid #BBBBBB;">
+
+															<table border="0" cellpadding="0" cellspacing="0" width="100%">
+
+																<tbody><tr>
+
+																	<td align="left" valign="top" class="col-2-content">
+
+																		<img src="./developer-intro_files/getfile(3).ashx" width="40">
+
+																		<h2 style="padding-top:15px;">Your Seating</h2>
+
+																		<h3>The design team</h3>
+
+																		<span class="bodyContent">
+																		 	<p>
+																		 	You will be sitting next to <span id="param_neighbor">Tony Crosby</span>, one of our <span id="param_neighbor_type">developers</span> here in <span id="param_city">New York</span>.
+																			</p>
+																		</span>
+
+																	</td>
+
+																</tr>
+
+															</tbody></table>
+
+														</td>
+
+														<!-- COLUMN 3 -->
+
+														<td align="left" valign="top" width="33%" class="templateColumnContainer" style="border-bottom:1px solid #BBBBBB;">
+
+															<table border="0" cellpadding="0" cellspacing="0" width="100%">
+
+																<tbody><tr>
+
+																	<td align="left" valign="top" class="col-2-content">
+
+																		<img src="./developer-intro_files/getfile(4).ashx" width="40">
+
+																		<h2 style="padding-top:15px;">Dress Code</h2>
+
+																		<h3>Smart Creative</h3>
+
+																		<span class="bodyContent">
+																			<p>
+																			There is no dress code, but we all like to look sharp so wear what you deem appropriate.
+																			</p>
+																		</span>
+
+																	</td>
+
+																</tr>
+
+															</tbody></table>
+
+														</td>
+
+													</tr>
+
+												</tbody></table>
+
+
+
+
+
+												<!-- EMAIL ADDESS -->
+
+												<table border="0" cellpadding="0" cellspacing="0" width="100%" id="template-width" class="bodyContent" style="padding-bottom:0px;">
+
+													<tbody><tr>
+
+														<!-- COLUMN 1 -->
+
+														<td align="left" valign="top" width="50%" class="templateColumnContainer" style="border-bottom:1px solid #BBBBBB;">
+
+															<table border="0" cellpadding="0" cellspacing="0" width="100%">
+
+																<tbody><tr>
+
+																	<td align="left" valign="top" class="col-1-content">
+
+																		<h2>Email Address</h2>
+
+																		<h3>Active directory domain credentials</h3>
+
+																		<span class="email-panel">
+
+																			<img src="./developer-intro_files/getfile(5).ashx" width="40">
+
+																			<br>
+
+																			<a id="param_email_link" href="mailto:kristof.dziemianczyk@tigerspike.com">
+																				<span id="param_email">kristof.dziemianczyk@tigerspike.com</span>
+																			</a>
+
+																		</span>
+
+																		<p>Note: Your password will be sent via SMS</p>
+
+																	</td>
+
+																</tr>
+
+															</tbody></table>
+
+														</td>
+
+														<!-- COLUMN 2 -->
+
+														<td align="left" valign="top" width="50%" class="templateColumnContainer" style="border-bottom:1px solid #BBBBBB;">
+
+															<table border="0" cellpadding="0" cellspacing="0" width="100%">
+
+																<tbody><tr>
+
+																	<td align="left" valign="top" class="col-2-content">
+
+																		<span class="bodyContent">
+
+																			<p style="padding-top:50px">
+																				Your email address is hosted by Google.<br>
+																		 		These credentials will give you access to a number of Google services including:<br>
+																		 		<strong>1. Gmail</strong><br>
+																		 		<strong>2. Calendar</strong><br>
+																		 		<strong>3. (Google) Drive</strong>
+																		 	</p>
+
+																		</span>
+
+																	</td>
+
+																</tr>
+
+															</tbody></table>
+
+														</td>
+
+													</tr>
+
+												</tbody></table>
+
+
+
+
+
+												<!-- INTERNET & HARDWARE -->
+
+												<table border="0" cellpadding="0" cellspacing="0" width="100%" id="template-width" class="bodyContent" style="padding-bottom:0px;">
+
+													<tbody><tr>
+
+														<!-- COLUMN 1 -->
+
+														<td align="left" valign="top" width="50%" class="templateColumnContainer" style="border-bottom:1px solid #BBBBBB;">
+
+															<table border="0" cellpadding="0" cellspacing="0" width="100%">
+
+																<tbody><tr>
+
+																	<td align="left" valign="top" class="col-1-content">
+
+																		<h2>Internet</h2>
+
+																		<h3>Wireless &amp; Network access</h3>
+
+																		<span class="bodyContent">
+																		 	<p>
+																		 	Your machine has a&nbsp;wired ethernet connection, and there are also two wifi networks in the office –
+																		 	Unsecure and Secure. Secure gives you full access to Tigerspike internet and server.
+																			</p>
+																		</span>
+
+																	</td>
+
+																</tr>
+
+															</tbody></table>
+
+														</td>
+
+														<!-- COLUMN 2 -->
+
+														<td align="left" valign="top" width="50%" class="templateColumnContainer" style="border-bottom:1px solid #BBBBBB;">
+
+															<table border="0" cellpadding="0" cellspacing="0" width="100%">
+
+																<tbody><tr>
+
+																	<td align="left" valign="top" class="col-2-content">
+
+																		<h2>Hardware</h2>
+
+																		<h3>Mac Book Pro Retina 15 inch</h3>
+
+																		<span class="bodyContent">
+
+																			<p>
+																				A laptop will be provided for you to use. Please look after it, like it was your own.You're welcome to take it home and feel free to configure the laptop in any way to accommodate your workflow.
+																			</p>
+
+																		</span>
+
+																	</td>
+
+																</tr>
+
+															</tbody></table>
+
+														</td>
+
+													</tr>
+
+												</tbody></table>
+
+
+
+
+
+												<!-- MEET THE TEAM -->
+
+												<table border="0" cellpadding="0" cellspacing="0" width="100%" id="template-width" class="bodyContent" style="padding-bottom:40px;">
+
+													<tbody><tr>
+
+														<td align="left" valign="top" class="col-1-content" colspan="4">
+
+															<h2>Meet the team</h2>
+
+															<p>We are a friendly bunch of folk and formal intros will be conducted on your first day.
+															For future reference, here are the names and emails of each department lead.
+															</p>
+
+														</td>
+
+													</tr>
+
+													<tr>
+
+														<!-- COLUMN 1 -->
+
+														<td align="left" valign="top" width="25%" class="templateColumnContainer">
+
+															<table border="0" cellpadding="0" cellspacing="0" width="100%">
+
+																<tbody><tr>
+
+																	<td align="left" valign="top">
+
+																		<img src="./developer-intro_files/getfile(6).ashx" width="40">
+
+																		<h4 style="padding-top:15px; padding-bottom:10px; color:#575857;">Commercial</h4>
+
+																		<span><h4><a href="mailto:mark.oliver@tigerspike.com" style="text-decoration:underline;">Mark Oliver</a></h4></span>
+
+																	</td>
+
+																</tr>
+
+															</tbody></table>
+
+														</td>
+
+														<!-- COLUMN 2 -->
+
+														<td align="left" valign="top" width="25%" class="templateColumnContainer">
+
+															<table border="0" cellpadding="0" cellspacing="0" width="100%">
+
+																<tbody><tr>
+
+																	<td align="left" valign="top">
+
+																		<img src="./developer-intro_files/getfile(7).ashx" width="40">
+
+																		<h4 style="padding-top:15px; padding-bottom:10px; color:#575857;">Technical</h4>
+
+																		<span><h4><a href="mailto:marc.hildenbrand@tigerspike.com" style="text-decoration:underline;">Marc Hildenbrand</a></h4></span>
+
+																	</td>
+
+																</tr>
+
+															</tbody></table>
+
+														</td>
+
+														<!-- COLUMN 3 -->
+
+														<td align="left" valign="top" width="25%" class="templateColumnContainer">
+
+															<table border="0" cellpadding="0" cellspacing="0" width="100%">
+
+																<tbody><tr>
+
+																	<td align="left" valign="top">
+
+																		<img src="./developer-intro_files/getfile(8).ashx" width="40">
+
+																		<h4 style="padding-top:15px; padding-bottom:10px; color:#575857;">Production</h4>
+
+																		<span><h4><a href="mailto:theo.dias@tigerspike.com" style="text-decoration:underline;">Theo Dias</a></h4></span>
+
+																	</td>
+
+																</tr>
+
+															</tbody></table>
+
+														</td>
+
+														<!-- COLUMN 4 -->
+
+														<td align="left" valign="top" width="25%" class="templateColumnContainer">
+
+															<table border="0" cellpadding="0" cellspacing="0" width="100%">
+
+																<tbody><tr>
+
+																	<td align="left" valign="top">
+
+																		<img src="./developer-intro_files/getfile(9).ashx" width="40">
+
+																		<h4 style="padding-top:15px; padding-bottom:10px; color:#575857;">Design</h4>
+
+																		<span><h4><a href="mailto:shane.allen@tigerspike.com" style="text-decoration:underline;">Shane Allen</a></h4></span>
+
+																	</td>
+
+																</tr>
+
+															</tbody></table>
+
+														</td>
+
+													</tr>
+
+												</tbody></table>
+
+
+
+
+												<!-- RAMP UP BUDDY -->
+
+												<table border="0" cellpadding="0" cellspacing="0" width="100%" id="template-width" class="bodyContent">
+
+													<tbody><tr>
+
+														<td align="left" style="padding-top:30px; padding-bottom:30px; display:block; border-top:1px solid #BBBBBB;">
+
+															<h2>Ramp-up buddy</h2>
+
+															<h3>Someone to show you the ropes</h3>
+
+															<span class="bodyContent">
+
+																<p>
+																I will be in on Tuesday to show you the ropes, but Mark Oliver and Marc Hildenbrand (Technical)&nbsp;will be good points of reference for any questions as the day progresses. Apryl runs a tight ship around the office, so be sure to spend some time getting to know the ins and outs of TS Mel.
+																</p>
+
+															</span>
+
+														</td>
+
+													</tr>
+
+												</tbody></table>
+
+
+
+
+
+
+											</td>
+
+										</tr>
+
+									</tbody></table>
+
+								<!-- END SECTION 1 -->
+
+							</td>
+
+						</tr>
+
+
+						<tr>
+
+							<td valign="top">
+
+
+
+
+								<!-- BLUE AREA -->
+
+								<table border="0" cellpadding="20" cellspacing="0" width="100%" id="templateFooterBG" class="param_designers param_block">
+
+									<tbody><tr>
+
+										<td align="center" valign="top" style="padding-bottom:0px;">
+
+											<!-- YOUR ROLE -->
+
+											<table border="0" cellpadding="0" cellspacing="0" width="100%" id="template-width" class="bodyContent">
+
+												<tbody><tr>
+
+													<td align="left" valign="top" width="100%" style="max-width:450px; padding-top:30px; padding-bottom:15px;">
+
+														<h2 style="color:#525252; letter-spacing:-0.5px;">Your role</h2>
+
+														<h2 style="color:#525252; font-weight:normal; letter-spacing:-0.5px;">The (multi disciplined) designer</h2>
+
+													</td>
+
+												</tr>
+
+												<tr>
+
+													<td>
+
+														<table border="0" cellpadding="0" cellspacing="0" width="100%">
+
+															<tbody><tr>
+
+																<td align="left" style="padding-bottom:40px; width:100%; border-bottom:1px solid #BBBBBB;" class="largeImage">
+
+																	<img src="./developer-intro_files/getfile(10).ashx" alt="Role" width="597">
+
+																</td>
+
+															</tr>
+
+														</tbody></table>
+
+													</td>
+
+												</tr>
+
+											</tbody></table>
+
+
+
+
+
+											<!-- DESIGN -->
+
+											<table border="0" cellpadding="0" cellspacing="0" width="100%" id="template-width" class="bodyContent">
+
+												 	<tbody><tr>
+
+												 		<td align="left" valign="top" width="100%" style="max-width:450px; padding-top:30px; ">
+
+															<h2 style="color:#525252; letter-spacing:-0.5px;">
+
+																<span>A word on design</span>
+
+															</h2>
+
+															<h2 style="color:#525252; letter-spacing:-0.5px; font-weight:normal;"><span>Best practice and industry standard</span></h2>
+
+															<p>We are proactive in the application of best practice and industry standard design. The "PPP3" (Pixel Perfect Precision 3) Guide to digital design best reflects this approach. You can find the guide on the design server under 'resources'.</p>
+
+															<p>Our design culture is also very collaborative and open. As a member of the design team you're encouraged to share insights and ideas, get involved in design critiques, conduct 'lunch &amp; learn' sessions and promote design thinking to the broader company.
+
+														</p></td>
+
+												 	</tr>
+
+												 </tbody></table>
+
+												 <table border="0" cellpadding="0" cellspacing="0" width="100%" id="template-width" class="bodyContent">
+
+												 	<tbody><tr>
+
+												 		<!-- ENTRY 1 -->
+
+												 		<td align="left" valign="top" width="50%" class="templateColumnContainer" style="border-bottom:1px solid #BBBBBB;">
+
+												 			<table border="0" cellpadding="0" cellspacing="0" width="100%">
+
+												 				<tbody><tr>
+
+												 					<td align="left" valign="top" class="col-1-content">
+
+												 						<img src="./developer-intro_files/getfile(11).ashx" width="40">
+
+												 						<h2 style="padding-top:15px;">Core Tools</h2>
+
+												 						<h3>Adobe + others = good design</h3>
+
+												 						<span class="bodyContent">
+
+													 						<p>
+													 							We use Adobe CC for the design process, along with a number of other third party tools that help us improve efficiencies in workflow and collaboration.
+													 						</p>
+
+												 						</span>
+
+												 					</td>
+
+												 				</tr>
+
+												 			</tbody></table>
+
+														</td>
+
+														<!-- ENTRY 2 -->
+
+														<td align="left" valign="top" width="50%" class="templateColumnContainer" style="border-bottom:1px solid #BBBBBB;">
+
+															<table border="0" cellpadding="0" cellspacing="0" width="100%">
+
+																<tbody><tr>
+
+																	<td align="left" valign="top" class="col-2-content">
+
+																		<img src="./developer-intro_files/getfile(12).ashx" width="40">
+
+																		<h2 style="padding-top:15px;">Keeping up-to-date</h2>
+
+																		<h3>Tigerspike experience blog</h3>
+
+																		<span class="bodyContent">
+
+																			<p>
+																				Staying in touch with industry new, events, tools and emerging trends is really important to us. Feel free to share insights on our global <a href="https://plus.google.com/communities/103201087109793653790">Experience Design Blog</a>
+																			</p>
+
+																		</span>
+
+																	</td>
+
+																</tr>
+
+															</tbody></table>
+
+														</td>
+
+												 </tr>
+
+												</tbody></table>
+
+												<!-- ENTRY 2 -->
+
+												<table border="0" cellpadding="0" cellspacing="0" width="100%" id="template-width" class="bodyContent">
+
+													<tbody><tr>
+
+														<td align="left" valign="top" width="100%" style="max-width:450px; padding-top:30px;">
+
+															<h2 style="color:#525252;">Goals for the first week</h2>
+
+															<p>Here are the things (in rough order) you should strive to accomplish by the end of your first week here.</p>
+															<p>
+															1.	Initial "One on One" Meeting with Mark Oliver<br>
+															2.	Induction Presentation with Mark Oliver<br>
+															3.	Get Door Access Code from Apryl Chen<br>
+															4.	Fill in new hire paperwork (Apryl Chen to assist with this):&nbsp;Tigerspike personnel &amp;&nbsp;Tax/Payment documentation<br>
+															5.	Organize email filters and&nbsp;generate your email signature<br>
+															6.	Send me&nbsp;a brief bio and photo&nbsp;that&nbsp;will be included in an all company new starter notice<br>
+															7.	Setup new Mac (unless BYOD for week 1) if appropriate<br>
+															8.	Familiarise yourself with Tigerspike Mel processes and personnel<br>
+															9.	Be confident on your roles and responsibilities in terms of design, UX and dev overlap<br>
+															10.	Have fun!
+															</p>
+
+														</td>
+
+													</tr>
+
+												</tbody></table>
+
+											</td>
+
+										</tr>
+
+									</tbody></table>
+
+
+
+
+
+
+								<!-- BLUE AREA -->
+
+								<table border="0" cellpadding="20" cellspacing="0" width="100%" id="templateFooterBG" class="param_developers param_block" style="display: table;">
+
+									<tbody><tr>
+
+										<td align="center" valign="top" style="padding-bottom:0px;">
+
+											<!-- YOUR ROLE -->
+
+											<table border="0" cellpadding="0" cellspacing="0" width="100%" id="template-width" class="bodyContent">
+
+												<tbody><tr>
+
+													<td align="left" valign="top" width="100%" style="max-width:450px; padding-top:30px; padding-bottom:15px;">
+
+														<h2 style="color:#525252; letter-spacing:-0.5px;">Your role</h2>
+
+														<h2 style="color:#525252; font-weight:normal; letter-spacing:-0.5px;">The (multi disciplined) nerd</h2>
+
+													</td>
+
+												</tr>
+
+												<tr>
+
+													<td>
+
+														<table border="0" cellpadding="0" cellspacing="0" width="100%">
+
+															<tbody><tr>
+
+																<td align="left" style="padding-bottom:40px; width:100%; border-bottom:1px solid #BBBBBB;" class="largeImage">
+
+																	<img src="./developer-intro_files/getfile(10).ashx" alt="Role" width="597">
+
+																</td>
+
+															</tr>
+
+														</tbody></table>
+
+													</td>
+
+												</tr>
+
+											</tbody></table>
+
+
+
+
+
+											<!-- DESIGN -->
+
+											<table border="0" cellpadding="0" cellspacing="0" width="100%" id="template-width" class="bodyContent">
+
+												 	<tbody><tr>
+
+												 		<td align="left" valign="top" width="100%" style="max-width:450px; padding-top:30px; ">
+
+															<h2 style="color:#525252; letter-spacing:-0.5px;">
+
+																<span>A word on design</span>
+
+															</h2>
+
+															<h2 style="color:#525252; letter-spacing:-0.5px; font-weight:normal;"><span>Best practice and industry standard</span></h2>
+
+															<p>We are proactive in the application of best practice and industry standard design. The "PPP3" (Pixel Perfect Precision 3) Guide to digital design best reflects this approach. You can find the guide on the design server under 'resources'.</p>
+
+															<p>Our design culture is also very collaborative and open. As a member of the design team you're encouraged to share insights and ideas, get involved in design critiques, conduct 'lunch &amp; learn' sessions and promote design thinking to the broader company.
+
+														</p></td>
+
+												 	</tr>
+
+												 </tbody></table>
+
+												 <table border="0" cellpadding="0" cellspacing="0" width="100%" id="template-width" class="bodyContent">
+
+												 	<tbody><tr>
+
+												 		<!-- ENTRY 1 -->
+
+												 		<td align="left" valign="top" width="50%" class="templateColumnContainer" style="border-bottom:1px solid #BBBBBB;">
+
+												 			<table border="0" cellpadding="0" cellspacing="0" width="100%">
+
+												 				<tbody><tr>
+
+												 					<td align="left" valign="top" class="col-1-content">
+
+												 						<img src="./developer-intro_files/getfile(11).ashx" width="40">
+
+												 						<h2 style="padding-top:15px;">Core Tools</h2>
+
+												 						<h3>Adobe + others = good design</h3>
+
+												 						<span class="bodyContent">
+
+													 						<p>
+													 							We use Adobe CC for the design process, along with a number of other third party tools that help us improve efficiencies in workflow and collaboration.
+													 						</p>
+
+												 						</span>
+
+												 					</td>
+
+												 				</tr>
+
+												 			</tbody></table>
+
+														</td>
+
+														<!-- ENTRY 2 -->
+
+														<td align="left" valign="top" width="50%" class="templateColumnContainer" style="border-bottom:1px solid #BBBBBB;">
+
+															<table border="0" cellpadding="0" cellspacing="0" width="100%">
+
+																<tbody><tr>
+
+																	<td align="left" valign="top" class="col-2-content">
+
+																		<img src="./developer-intro_files/getfile(12).ashx" width="40">
+
+																		<h2 style="padding-top:15px;">Keeping up-to-date</h2>
+
+																		<h3>Tigerspike experience blog</h3>
+
+																		<span class="bodyContent">
+
+																			<p>
+																				Staying in touch with industry new, events, tools and emerging trends is really important to us. Feel free to share insights on our global <a href="https://plus.google.com/communities/103201087109793653790">Experience Design Blog</a>
+																			</p>
+
+																		</span>
+
+																	</td>
+
+																</tr>
+
+															</tbody></table>
+
+														</td>
+
+												 </tr>
+
+												</tbody></table>
+
+												<!-- ENTRY 2 -->
+
+												<table border="0" cellpadding="0" cellspacing="0" width="100%" id="template-width" class="bodyContent">
+
+													<tbody><tr>
+
+														<td align="left" valign="top" width="100%" style="max-width:450px; padding-top:30px;">
+
+															<h2 style="color:#525252;">Goals for the first week</h2>
+
+															<p>Here are the things (in rough order) you should strive to accomplish by the end of your first week here.</p>
+															<p>
+															1.	Initial "One on One" Meeting with Mark Oliver<br>
+															2.	Induction Presentation with Mark Oliver<br>
+															3.	Get Door Access Code from Apryl Chen<br>
+															4.	Fill in new hire paperwork (Apryl Chen to assist with this):&nbsp;Tigerspike personnel &amp;&nbsp;Tax/Payment documentation<br>
+															5.	Organize email filters and&nbsp;generate your email signature<br>
+															6.	Send me&nbsp;a brief bio and photo&nbsp;that&nbsp;will be included in an all company new starter notice<br>
+															7.	Setup new Mac (unless BYOD for week 1) if appropriate<br>
+															8.	Familiarise yourself with Tigerspike Mel processes and personnel<br>
+															9.	Be confident on your roles and responsibilities in terms of design, UX and dev overlap<br>
+															10.	Have fun!
+															</p>
+
+														</td>
+
+													</tr>
+
+												</tbody></table>
+
+											</td>
+
+										</tr>
+
+									</tbody></table>
+
+
+
+
+
+									<!-- TIGERSPIKE FOOTER -->
+
+									<table border="0" cellpadding="0" cellspacing="20" width="100%" id="bodyTable">
+
+										<tbody><tr>
+
+											<td align="center" valign="top">
+
+												<table border="0" cellpadding="0" cellspacing="0" width="100%" id="template-width" class="bodyContent">
+
+													<tbody><tr>
+
+														<td align="left" style="padding-top:30px; padding-bottom:0px; display:block;">
+
+															<h2>Local area</h2>
+
+															<span class="bodyContent">
+
+																<p>
+																 	Working in Fitzroy has its advantages. Local cafes, restaurants and watering-holes are in abundance.
+																 	Some of our favourite places for coffee, lunch or evening drinks are just around the corner.
+																</p>
+
+															</span>
+
+														</td>
+
+													</tr>
+
+												</tbody></table>
+
+												<table border="0" cellpadding="0" cellspacing="0" width="100%" id="template-width" class="bodyContent">
+
+													<tbody><tr>
+
+														<!-- ENTRY 1 -->
+
+														<td align="left" valign="top" width="25%" class="templateColumnContainer" style="padding-bottom:50px;">
+
+															<table border="0" cellpadding="0" cellspacing="0" width="100%">
+
+																<tbody><tr>
+
+																	<td align="left" valign="top">
+
+																		<img src="./developer-intro_files/getfile(13).ashx" width="40">
+
+																		<h4 style="padding-top:15px; ">Coffee</h4>
+
+																		<p>
+																			Doomsday<br>
+																			Newtown Social<br>
+																			Slow Poke<br>
+																			Silo (aka Dom’s)<br>
+																			Atomica
+																		</p><p>
+
+																	</p></td>
+
+																</tr>
+
+															</tbody></table>
+
+														</td>
+
+														<!-- ENTRY 2 -->
+
+														<td align="left" valign="top" width="25%" class="templateColumnContainer" style="padding-bottom:50px;">
+
+															<table border="0" cellpadding="0" cellspacing="0" width="100%">
+
+																<tbody><tr>
+
+																	<td align="left" valign="top">
+
+																		<img src="./developer-intro_files/getfile(14).ashx" width="40">
+
+																		<h4 style="padding-top:15px; ">Lunch</h4>
+
+																		<p>
+																			Alimentari<br>
+																			Meatballs &amp; Sons<br>
+																			HuxtaBurger<br>
+																			Argos<br>
+																			N Lee Bakery
+																		</p><p>
+
+																 </p></td>
+
+																</tr>
+
+															</tbody></table>
+
+														</td>
+
+														<!-- ENTRY 3 -->
+
+														<td align="left" valign="top" width="25%" class="templateColumnContainer" style="padding-bottom:50px;">
+
+															<table border="0" cellpadding="0" cellspacing="0" width="100%">
+
+																<tbody><tr>
+
+																	<td align="left" valign="top">
+
+																		<img src="./developer-intro_files/getfile(15).ashx" width="40">
+
+																		<h4 style="padding-top:15px; ">Dinner</h4>
+
+																		<p>
+																			Belles Diner<br>
+																			Smith &amp; Daughters<br>
+																			Naked for Satan<br>
+																			Trippy Taco<br>
+																			Sonido
+																		</p><p>
+
+																	</p></td>
+
+																</tr>
+
+															</tbody></table>
+
+														</td>
+
+														<!-- ENTRY 4 -->
+
+														<td align="left" valign="top" width="25%" class="templateColumnContainer" style="padding-bottom:50px;">
+
+															<table border="0" cellpadding="0" cellspacing="0" width="100%">
+
+																<tbody><tr>
+
+																	<td align="left" valign="top">
+
+																		<img src="./developer-intro_files/getfile(16).ashx" width="40">
+
+																		<h4 style="padding-top:15px; ">Bars &amp; Pubs</h4>
+
+																		<p>
+																			The Standard<br>
+																			The Black Pearl<br>
+																			Grub Food Van<br>
+																			The Everleigh<br>
+																			The Workers Club
+																		</p><p>
+
+																	</p></td>
+
+																</tr>
+
+															</tbody></table>
+
+														</td>
+
+													</tr>
+
+												</tbody></table>
+
+
+
+
+
+											 	<!-- FOOTER -->
+
+											 	<table border="0" cellpadding="0" cellspacing="0" width="100%" id="template-width" class="footerContent">
+
+											 		<tbody><tr>
+
+											 			<td style="padding-top:50px; padding-bottom:30px; border-top:1px solid #BBBBBB;">
+
+											 				<a href="http://www.tigerspike.com/" style="text-decoration:none;"><img src="./developer-intro_files/getfile.ashx" width="183" alt="Tigerspike"></a>
+
+											 			</td>
+
+											 		</tr>
+
+											 		<tr>
+
+											 			<td class="footerContent" style=" padding-bottom:35px; ">
+
+											 				<p style="font-weight:bold;">
+
+											 					<span style="padding-right:10px;">New York</span>
+
+											 					<span style="padding-right:10px;">San Francisco</span>
+
+															 	<span style="padding-right:10px;">London</span>
+
+															 	<span style="padding-right:10px;">Dubai</span>
+
+															 	<span style="padding-right:10px;">Sydney</span>
+
+															 	<span style="padding-right:10px;">Melbourne</span>
+
+															 	<span style="padding-right:10px;">Singapore</span>Tokyo
+
+															</p>
+
+															<p>
+
+																<span>Copyright © *|CURRENT_YEAR|* *|LIST:COMPANY|*, All rights reserved.</span><br>
+
+															</p>
+
+															<p>
+
+																<a href="http://internal.tigerspike.com/induction/*%7CARCHIVE%7C*">View in browser</a>
+
+																<span style="padding-left:6px; color:#cfcfcf; padding-right:6px;"> | </span>
+
+																<a href="http://internal.tigerspike.com/induction/*%7CUNSUB%7C*">Unsubscribe</a>
+
+																<span style="padding-left:6px; color:#cfcfcf; padding-right:6px;"> | </span>
+
+																<a href="http://internal.tigerspike.com/induction/*%7CUPDATE_PROFILE%7C*">Update subscription </a>
+
+															</p>
+
+															<p>
+
+																<span style="color:#cfcfcf;">Designed in Melbourne :-)</span>
+
+															</p>
+
+														</td>
+
+													</tr>
+
+												</tbody></table>
+
+											</td>
+
+										</tr>
+
+									</tbody></table>
+
+								</td>
+
+							</tr>
+
+						</tbody></table>
+
+						<!-- END EMAIL CONTAINER -->
+
+					</td>
+
+				</tr>
+
+			</tbody></table>
+
+		
+
+</body></html>
