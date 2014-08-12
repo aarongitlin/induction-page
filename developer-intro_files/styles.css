@@ -247,12 +247,12 @@ h4{
 	text-align:center;
 	text-decoration:none;
 }
-
-.bodyContent img{
-	display:inline;
+img{
 	height:auto;
 }
-
+img.centered {
+	margin: auto;
+}
 .footerContent a:link,.footerContent a:visited,.footerContent a .yshortcuts{
 	color:#e8322c;
 	font-weight:normal;
@@ -265,12 +265,8 @@ h4{
 
 .largeImage{
 	max-width:600px;
-}
-
-.largeImage img{
-	max-width:600px !important;
-	height:auto !important;
-	width:100% !important;
+	display: block;
+	margin: auto;
 }
 
 .smallImage{

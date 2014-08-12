@@ -78,7 +78,10 @@
 				$('#param_neighbor_type').html(urldecode(QueryString.nbt));
 				$('#param_city').html(urldecode(QueryString.c));
 				$('#param_email').html(urldecode(QueryString.e));
-					$('#param_email_link').attr("href", "mailto:"+urldecode(QueryString.e));
+				$('#param_email_link').attr("href", "mailto:"+urldecode(QueryString.e));
+
+				$('#param_img').attr("src", "./imgs/"+urldecode(QueryString.img)+".png");
+
 
 				var dept = urldecode(QueryString.d);
 
@@ -162,7 +165,7 @@
 
 														 			<td align="left" style="padding-top:0px; width:100%;" class="largeImage">
 
-														 				<img src="./developer-intro_files/getfile(1).ashx" alt="Designer" width="600">
+														 				<img id="param_img" class="largeImage" src="" max-width="100%">
 
 														 			</td>
 
@@ -192,12 +195,12 @@
 												 			<span class="bodyContent">
 
 																<p>
-																We’re really happy to have you on board and we think you’ll be a great addition to the team. There are a couple of things to prepare for, covering your first week. Principal among those to discuss on Tuesday 1st of July, is your schedule for the following week and to ensure that there are a number of introductory sessions lined-up. In lieu of that discussion, here are some of the big ticket items to muse on or refer back to whilst you settle in.
+																We’re really happy to have you on board and we think you’ll be a great addition to the team. There are a couple of things to prepare for as you settle into your new role. We've included a link with a bit of information that might help you get to know the team, the business, and the area. Always feel free to ask any questions and again, welcome!
 																</p>
 
 															</span>
 
-															<h3>Shane Allen – Design Director, Melbourne</h3>
+															<h3>Alex Hall – President, Americas</h3>
 
 														</td>
 
@@ -244,19 +247,19 @@
 																<tbody><tr>
 
 																	<td align="left" valign="top" class="col-1-content">
-
+																	
 																		<img src="./developer-intro_files/getfile(2).ashx" width="40">
+																		
+																		<h2 style="padding-top:15px;">Hours</h2>
+																		
+																		<h3>9:30-5:30</h3>
 
-																		<h2 style="padding-top:15px;">First Day</h2>
-
-																		<h3>11:00am</h3>
-
-																		<span class="bodyContent">
+																		<span class="bodyContent" style="line-height: 22px; font-size: 15px;">
 																			<p>
-																			Please take your time getting in on your first day. We won't expect you before&nbsp;11:00am.
+																			Our usual hours are 9:30am to 5:30pm. Sometimes we're busier than usual, but we're always flexible.
 																			</p>
 																		</span>
-
+																	
 																	</td>
 
 																</tr>
@@ -279,7 +282,7 @@
 
 																		<h2 style="padding-top:15px;">Your Seating</h2>
 
-																		<h3>The design team</h3>
+																		<h3>The development team</h3>
 
 																		<span class="bodyContent">
 																		 	<p>
@@ -355,7 +358,7 @@
 
 																		<span class="email-panel">
 
-																			<img src="./developer-intro_files/getfile(5).ashx" width="40">
+																			<img src="./developer-intro_files/getfile(5).ashx" class="centered" width="40">
 
 																			<br>
 
@@ -364,8 +367,6 @@
 																			</a>
 
 																		</span>
-
-																		<p>Note: Your password will be sent via SMS</p>
 
 																	</td>
 
