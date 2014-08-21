@@ -1,0 +1,145 @@
+// ICON BULLETS
+
+.bullets {
+  $icon-bullet-size: 5.0em;
+
+  overflow: auto;
+  margin-bottom: $base-line-height;
+
+  
+
+  .one-col-bullet {
+    @include media($large-screen) {
+      @include span-columns(12);
+      @include omega(n);  
+    } 
+  }
+
+// change ".three-col-bullet" class to this for two bullet layout
+  .two-col-bullet {
+    @include media($large-screen) {
+      @include span-columns(6);
+      @include omega(2n);  
+    } 
+  }
+  
+  .three-col-bullet {
+    @include media($large-screen) {
+      @include span-columns(4);
+      @include omega(3n);
+    }
+  }
+
+  
+// change ".three-col-bullet" class to this for four bullet layout
+  .four-col-bullet {
+    @include span-columns(6);
+    @include omega(n);
+    margin-top: 1em;
+    @include media($large-screen) {
+      @include span-columns(3);
+      @include omega(4n);
+    }
+    .bullet-icon {
+      margin: auto;
+      float: none;
+    }
+    .bullet-content {
+      clear: left;
+      text-align: center;
+      margin: auto;
+    }
+    h4 {
+      padding-top: 0;}
+
+  }
+
+  .bullet-icon {
+    float: left;
+    padding: $icon-bullet-size /6;
+    width: $icon-bullet-size;
+    height: $icon-bullet-size;
+  }
+
+  .bullet-content {
+    margin-left: $icon-bullet-size *1.4;
+    margin-bottom: 2em;
+  }
+
+  h4 {
+    font-size: 1.4em;
+    padding-top: $icon-bullet-size /8;
+    margin-bottom: $icon-bullet-size /6;
+    border-bottom: 1px solid transparentize($base-font-color, .8);
+    display: inline-block;
+  }
+}
+
+//SIDE IMAGE
+
+$side-image-background: $red;
+$side-image-border: 1px solid darken(transparentize($side-image-background, .8), 30);
+
+.side-image {
+  background: #F9F9F9;
+
+  @include media($large-screen) {
+    @include row(table);
+
+  }
+
+  .images-wrapper {
+    @include background(url('../developer-intro_files/getfile(5).ashx'));
+    background-color: $side-image-background;
+    border-bottom: $side-image-border;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: block;
+    min-height: 6em;
+
+
+    @include media($large-screen) {
+      @include span-columns(4);
+      background-position: center;
+      background-size: 40%;
+      background-repeat: no-repeat;
+      border-right: $side-image-border;
+    }
+  }
+
+  .content {
+    @include span-columns(12);
+    padding: 1em 1em 4em 1em;
+
+    @include media($large-screen) {
+      @include span-columns(8);
+      padding: 1em 1em 2em 1em;
+    }
+  }
+
+  .content h5 {
+    margin-bottom: .9em;
+  }
+
+  .content h3 {
+    background: $side-image-background;
+    color: white;
+    display: inline-block;
+    font-size: .75em;
+    font-weight: 800;
+    margin-bottom: 1.3em;
+    padding: 3px 8px;
+    text-transform: uppercase;
+  }
+
+  .content p {
+    color: gray;
+  }
+
+  .content button {
+    @include button(simple, white);
+    font-size: $base-font-size;
+    outline: none;
+  }
+  @include reset-display();
+}

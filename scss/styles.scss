@@ -1,0 +1,100 @@
+@import 'normalize/normalize.css';
+@import 'bourbon/bourbon';
+@import 'base/base';
+@import 'neat/neat';
+@import 'refills/refills';
+
+.param_block{
+	display:none;
+}
+
+aside {
+	opacity: 0.66;
+	font-style: italic;
+	font-weight: 600;
+	margin-bottom: 0.33em;
+	a {
+		color: $red;
+		font-style: normal;
+	}
+}
+.wrapper {
+	@include outer-container;
+	@include padding(1em);
+	@include media($max-screen-up) {
+		@include padding(0em);
+	}
+}
+.row {
+	@include row();
+}
+.logo-row {
+	@include row();
+	margin-top: 1em;
+	text-align: center;
+}
+.logo {
+	margin: auto;
+	@include media($medium-screen-up) {
+		@include span-columns(1);
+	}
+}
+.hero-container {
+	text-align: center;
+}
+
+.welcome-message {
+	font-size: 1.2em;
+	h3 {
+		padding-bottom: 0.33em;
+	}
+	@include media($large-screen-up) {
+
+	}
+}
+
+.useful-things {
+	margin-top: 3em;
+	border-bottom: 1px solid #ccc;
+}
+.heading-divider {
+	border-bottom: 3px solid #333;
+	@include margin (1em null 1em null);
+	@include padding (0.2em null 0.2em null);
+}
+
+.email-address {
+	margin-top: 3em;
+}
+
+.meet-team {
+	margin-top: 3em;
+}
+
+.blue-area {
+	background-color: #e3ebf4;
+}
+
+.role-notes {
+	padding-top: 1em;
+}
+
+footer {
+	border-top: 1px solid #ccc;
+	padding-top: 2em;
+	margin-top: 3em;
+	text-align: center;
+}
+.country-list {
+	padding-top: 2em;
+	text-align: center;
+	li {
+		display: inline;
+		padding-left: 1em;
+	}
+}
+.copyright {
+	margin-top: 1em;
+	margin-bottom: 1em;
+	opacity: 0.75;
+}
