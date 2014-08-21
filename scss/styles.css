@@ -395,7 +395,7 @@ input[type="submit"] {
       opacity: 0.5;
       cursor: not-allowed; }
 
-.param_block {
+.blue-area, .tools {
   display: none; }
 
 aside {
@@ -476,7 +476,8 @@ aside {
   background-color: #e3ebf4; }
 
 .role-notes {
-  padding-top: 1em; }
+  padding-top: 1em;
+  padding-bottom: 1em; }
 
 footer {
   border-top: 1px solid #ccc;

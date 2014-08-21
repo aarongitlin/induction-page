@@ -67,12 +67,18 @@ var QueryString = function () {
 				$('#param_neighbor_type').html(urldecode(QueryString.nbt));
 				$('#param_city').html(urldecode(QueryString.c));
 				$('#param_email').html(urldecode(QueryString.e));
+				
+				
+				$('#param_role').html(urldecode(QueryString.r));
+				if (QueryString.d) {
+					$('#' + QueryString.d).show();
+					console.log('turn on dept section');
+				}
+				if (QueryString.r) {
+					$('#' + QueryString.r).show();
+					console.log('turn on role section');
+				}
 				$('#param_email_link').attr("href", "mailto:"+urldecode(QueryString.e));
-
 				$('#param_img').attr("src", "./imgs/"+urldecode(QueryString.img)+".png");
 
-
-				var dept = urldecode(QueryString.d);
-
-				$(".param_"+dept).show();
 			});
