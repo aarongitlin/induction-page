@@ -67,6 +67,7 @@ var QueryString = function () {
 				$('#param_neighbor_type').html(urldecode(QueryString.nbt));
 				$('#param_city').html(urldecode(QueryString.c));
 				$('#param_email').html(urldecode(QueryString.e));
+				$('#param_buddy').html(urldecode(QueryString.b));
 				
 				
 				$('#param_role').html(urldecode(QueryString.r));
