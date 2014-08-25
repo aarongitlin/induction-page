@@ -80,6 +80,6 @@ var QueryString = function () {
 					console.log('turn on role section');
 				}
 				$('#param_email_link').attr("href", "mailto:"+urldecode(QueryString.e));
-				$('#param_img').attr("src", "./imgs/"+urldecode(QueryString.img)+".png");
+				$('#param_img').attr("src", "./imgs/"+urldecode(QueryString.img));
 
 			});
