@@ -89,7 +89,7 @@ $side-image-border: 1px solid darken(transparentize($side-image-background, .8),
   }
 
   .images-wrapper {
-    @include background(url('../developer-intro_files/getfile(5).ashx'));
+    @include background(url('../img/email.png'));
     background-color: $side-image-background;
     border-bottom: $side-image-border;
     background-repeat: no-repeat;

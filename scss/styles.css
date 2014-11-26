@@ -304,8 +304,8 @@ input[type="submit"] {
         display: table;
         clear: both; } }
   .side-image .images-wrapper {
-    background: url("../developer-intro_files/getfile(5).ashx");
-    background: url("../developer-intro_files/getfile(5).ashx");
+    background: url("../img/email.png");
+    background: url("../img/email.png");
     background-color: #e32728;
     border-bottom: 1px solid rgba(100, 13, 13, 0.2);
     background-repeat: no-repeat;
@@ -478,6 +478,9 @@ aside {
 .role-notes {
   padding-top: 1em;
   padding-bottom: 1em; }
+
+ol.checklist {
+  list-style-type: decimal; }
 
 footer {
   border-top: 1px solid #ccc;
