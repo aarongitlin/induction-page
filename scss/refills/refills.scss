@@ -4,7 +4,7 @@
   $icon-bullet-size: 5.0em;
 
   overflow: auto;
-  margin-bottom: $base-line-height;
+  margin-bottom: $base-line-height * 2;
 
   
 
@@ -55,15 +55,24 @@
   }
 
   .bullet-icon {
-    float: left;
-    padding: $icon-bullet-size /6;
-    width: $icon-bullet-size;
-    height: $icon-bullet-size;
+
+    width: 100%;
+    text-align: center;
+
+    @include media($medium-screen-up) {
+      float: left;
+      padding: $icon-bullet-size /6;
+      width: $icon-bullet-size;
+      height: $icon-bullet-size;
+    }
   }
 
   .bullet-content {
-    margin-left: $icon-bullet-size *1.4;
+    margin-left: auto;
     margin-bottom: 2em;
+    @include media($medium-screen-up) {
+      margin-left: $icon-bullet-size *1.4;
+    }
   }
 
   h4 {

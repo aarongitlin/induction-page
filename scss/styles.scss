@@ -32,11 +32,17 @@ aside {
 	@include row();
 	margin-top: 1em;
 	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	width: 75%;
+	@include media($medium-screen-up) {
+		width: 100%;
+	}
 }
 .logo {
 	margin: auto;
 	@include media($medium-screen-up) {
-		@include span-columns(1);
+		@include span-columns(1.5);
 	}
 }
 .hero-container {
@@ -47,6 +53,7 @@ aside {
 	font-size: 1.2em;
 	h3 {
 		padding-bottom: 0.33em;
+		text-align: center;
 	}
 	@include media($large-screen-up) {
 
@@ -82,7 +89,7 @@ aside {
 
 ol.checklist {
 	list-style-type: decimal;
-	
+	margin-left: 1.2em;
 }
 
 footer {

@@ -211,7 +211,7 @@ input[type="submit"] {
 
 .bullets {
   overflow: auto;
-  margin-bottom: 1.5em; }
+  margin-bottom: 3em; }
   @media screen and (min-width: 53.75em) {
     .bullets .one-col-bullet {
       float: left;
@@ -278,13 +278,20 @@ input[type="submit"] {
     .bullets .four-col-bullet h4 {
       padding-top: 0; }
   .bullets .bullet-icon {
-    float: left;
-    padding: 0.83333em;
-    width: 5em;
-    height: 5em; }
+    width: 100%;
+    text-align: center; }
+    @media screen and (min-width: 40em) {
+      .bullets .bullet-icon {
+        float: left;
+        padding: 0.83333em;
+        width: 5em;
+        height: 5em; } }
   .bullets .bullet-content {
-    margin-left: 7em;
+    margin-left: auto;
     margin-bottom: 2em; }
+    @media screen and (min-width: 40em) {
+      .bullets .bullet-content {
+        margin-left: 7em; } }
   .bullets h4 {
     font-size: 1.4em;
     padding-top: 0.625em;
@@ -430,11 +437,17 @@ aside {
 .logo-row {
   display: block;
   margin-top: 1em;
-  text-align: center; }
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%; }
   .logo-row:after {
     content: "";
     display: table;
     clear: both; }
+  @media screen and (min-width: 40em) {
+    .logo-row {
+      width: 100%; } }
 
 .logo {
   margin: auto; }
@@ -443,7 +456,7 @@ aside {
       float: left;
       display: block;
       margin-right: 7.42297%;
-      width: 19.43277%; }
+      width: 32.86064%; }
       .logo:last-child {
         margin-right: 0; } }
 
@@ -453,7 +466,8 @@ aside {
 .welcome-message {
   font-size: 1.2em; }
   .welcome-message h3 {
-    padding-bottom: 0.33em; }
+    padding-bottom: 0.33em;
+    text-align: center; }
 
 .useful-things {
   margin-top: 3em;
@@ -480,7 +494,8 @@ aside {
   padding-bottom: 1em; }
 
 ol.checklist {
-  list-style-type: decimal; }
+  list-style-type: decimal;
+  margin-left: 1.2em; }
 
 footer {
   border-top: 1px solid #ccc;
