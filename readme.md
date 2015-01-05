@@ -6,3 +6,6 @@
 
 ## Rachel:
 ?n=Rachel&img=robin.png&nb=Dom Lee&nbt=Design Leads&c=New%20York&d=experience&r=ui&e=rachel.robbins@tigerspike.com&b=Aaron Gitlin
+
+## Jieyu:
+?n=Jieyu&img=panda.png&nb=Justin&nbt=Experience%20Designers&c=New%20York&d=experience&r=ui&e=jieyu.xiong@tigerspike.com&b=Aaron%20Gitlin
