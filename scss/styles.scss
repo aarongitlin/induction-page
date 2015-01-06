@@ -1,0 +1,127 @@
+@import 'normalize/normalize.css';
+@import 'bourbon/bourbon';
+@import 'base/base';
+@import 'neat/neat';
+@import 'refills/refills';
+
+.blue-area, .tools {
+	display:none; //only display when role selected
+}
+
+aside {
+	opacity: 0.66;
+	font-style: italic;
+	font-weight: 600;
+	margin-bottom: 0.33em;
+	a {
+		color: $red;
+		font-style: normal;
+	}
+}
+.wrapper {
+	@include outer-container;
+	@include padding(1em);
+	@include media($max-screen-up) {
+		@include padding(0em);
+	}
+}
+.row {
+	@include row();
+}
+.logo-row {
+	@include row();
+	margin-top: 1em;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	width: 75%;
+	@include media($medium-screen-up) {
+		width: 100%;
+	}
+}
+.logo {
+	margin: auto;
+	@include media($medium-screen-up) {
+		@include span-columns(1.5);
+	}
+}
+.hero-container {
+	text-align: center;
+}
+
+.welcome-message {
+	font-size: 1.2em;
+	h3 {
+		padding-bottom: 0.33em;
+		text-align: center;
+	}
+	@include media($large-screen-up) {
+
+	}
+}
+
+.useful-things {
+	margin-top: 3em;
+	border-bottom: 1px solid #ccc;
+}
+.heading-divider {
+	border-bottom: 3px solid #333;
+	@include margin (1em null 1em null);
+	@include padding (0.2em null 0.2em null);
+}
+
+.email-address {
+	margin-top: 3em;
+}
+
+.meet-team {
+	margin-top: 3em;
+}
+
+// Meet the Team
+
+.profile-pic {
+	margin: auto;
+	float: none;
+	width: 7em;
+	height: 7em;
+	margin-bottom: 1em;
+}
+.profile-pic img {
+	border-radius: 50%;
+	width: 100%;
+}
+
+.blue-area {
+	background-color: #e3ebf4;
+}
+
+.role-notes {
+	padding-top: 1em;
+	padding-bottom: 1em;
+}
+
+ol.checklist {
+	list-style-type: decimal;
+	margin-left: 1.2em;
+}
+
+footer {
+	border-top: 1px solid #ccc;
+	padding-top: 2em;
+	margin-top: 3em;
+	text-align: center;
+}
+.country-list {
+	padding-top: 2em;
+	text-align: center;
+	li {
+		display: inline;
+		padding-left: 1em;
+	}
+}
+.copyright {
+	margin-top: 1em;
+	margin-bottom: 1em;
+	opacity: 0.75;
+}

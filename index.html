@@ -1,918 +1,420 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<!-- saved from url=(0147)http://internal.tigerspike.com/induction/?n=Kristof&nb=Tony%20Crosby&nbt=developers&c=New%20York&e=kristof.dziemianczyk@tigerspike.com&d=developers -->
-<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta name="viewport" http-equiv="Content-Type" content="text/html; charset=UTF-8; width=device-width, initial-scale=1">
+		<title>Welcome to Tigerspike</title>
 
-	<title>Welcome to Tigerspike</title>
-
-		<link rel="stylesheet" href="./developer-intro_files/styles.css">
-		<script src="./developer-intro_files/jquery.min.js"></script>
-		<script>
-			var QueryString = function () {
-			  // This function is anonymous, is executed immediately and
-			  // the return value is assigned to QueryString!
-			  var query_string = {};
-			  var query = window.location.search.substring(1);
-			  var vars = query.split("&");
-			  for (var i=0;i<vars.length;i++) {
-				var pair = vars[i].split("=");
-					// If first entry with this name
-				if (typeof query_string[pair[0]] === "undefined") {
-				  query_string[pair[0]] = pair[1];
-					// If second entry with this name
-				} else if (typeof query_string[pair[0]] === "string") {
-				  var arr = [ query_string[pair[0]], pair[1] ];
-				  query_string[pair[0]] = arr;
-					// If third or later entry with this name
-				} else {
-				  query_string[pair[0]].push(pair[1]);
-				}
-			  }
-				return query_string;
-			} ();
-
-
-			function urldecode(str) {
-			  //       discuss at: http://phpjs.org/functions/urldecode/
-			  //      original by: Philip Peterson
-			  //      improved by: Kevin van Zonneveld (http://kevin.vanzonneveld.net)
-			  //      improved by: Kevin van Zonneveld (http://kevin.vanzonneveld.net)
-			  //      improved by: Brett Zamir (http://brett-zamir.me)
-			  //      improved by: Lars Fischer
-			  //      improved by: Orlando
-			  //      improved by: Brett Zamir (http://brett-zamir.me)
-			  //      improved by: Brett Zamir (http://brett-zamir.me)
-			  //         input by: AJ
-			  //         input by: travc
-			  //         input by: Brett Zamir (http://brett-zamir.me)
-			  //         input by: Ratheous
-			  //         input by: e-mike
-			  //         input by: lovio
-			  //      bugfixed by: Kevin van Zonneveld (http://kevin.vanzonneveld.net)
-			  //      bugfixed by: Rob
-			  // reimplemented by: Brett Zamir (http://brett-zamir.me)
-			  //             note: info on what encoding functions to use from: http://xkr.us/articles/javascript/encode-compare/
-			  //             note: Please be aware that this function expects to decode from UTF-8 encoded strings, as found on
-			  //             note: pages served as UTF-8
-			  //        example 1: urldecode('Kevin+van+Zonneveld%21');
-			  //        returns 1: 'Kevin van Zonneveld!'
-			  //        example 2: urldecode('http%3A%2F%2Fkevin.vanzonneveld.net%2F');
-			  //        returns 2: 'http://kevin.vanzonneveld.net/'
-			  //        example 3: urldecode('http%3A%2F%2Fwww.google.nl%2Fsearch%3Fq%3Dphp.js%26ie%3Dutf-8%26oe%3Dutf-8%26aq%3Dt%26rls%3Dcom.ubuntu%3Aen-US%3Aunofficial%26client%3Dfirefox-a');
-			  //        returns 3: 'http://www.google.nl/search?q=php.js&ie=utf-8&oe=utf-8&aq=t&rls=com.ubuntu:en-US:unofficial&client=firefox-a'
-			  //        example 4: urldecode('%E5%A5%BD%3_4');
-			  //        returns 4: '\u597d%3_4'
-
-			  return decodeURIComponent((str + '')
-				.replace(/%(?![\da-f]{2})/gi, function () {
-				  // PHP tolerates poorly formed escape sequences
-				  return '%25';
-				})
-				.replace(/\+/g, '%20'));
-			}
-		</script>
-
-		<script type="text/javascript">
-			$(document).ready(function() {
-				$('#param_name').html(urldecode(QueryString.n));
-				$('#param_neighbor').html(urldecode(QueryString.nb));
-				$('#param_neighbor_type').html(urldecode(QueryString.nbt));
-				$('#param_city').html(urldecode(QueryString.c));
-				$('#param_email').html(urldecode(QueryString.e));
-				$('#param_email_link').attr("href", "mailto:"+urldecode(QueryString.e));
-
-				$('#param_img').attr("src", "./imgs/"+urldecode(QueryString.img)+".png");
-
-
-				var dept = urldecode(QueryString.d);
-
-				$(".param_"+dept).show();
-			});
-		</script>
-
-		<style>
-			.param_block{
-				display:none;
-			}
-		</style>
+		<link rel="stylesheet" href="scss/styles.css" />
+		<script src="js/jquery.min.js"></script>
+		<script src="js/scripts.js"></script>
 	</head>
 
-	<body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" data-pinterest-extension-installed="cr1.3.3">
-
-			<table border="0" cellpadding="0" cellspacing="0" width="100%" id="bodyTable">
-
-				<tbody><tr>
-
-					<td align="center" valign="top">
-
-
-
-
-						<!-- BEGIN CONTAINER -->
-
-						<table border="0" cellpadding="0" cellspacing="0" width="100%">
-
-							<tbody><tr>
-
-								<td align="center" valign="top" style="margin-bottom:0; padding-bottom:0;">
-
-
-
-
-
-									<!-- SECTION 1 -->
-
-									<table border="0" cellpadding="0" cellspacing="0" width="100%">
-
-										<tbody><tr>
-
-											<td align="center" valign="top" style="padding-bottom:50px;">
-
-
-
-
-
-												<!-- EMAIL LOGO	-->
-
-												<table border="0" cellpadding="0" cellspacing="0" width="100%" id="template-width" class="bodyContent">
-
-													<tbody><tr>
-
-														<td align="left" style="display:block; padding-top:50px; padding-bottom:50px;">
-
-															<a href="http://www.tigerspike.com/" style="text-decoration:none;"><img src="./developer-intro_files/getfile.ashx" width="183"></a>
-
-														</td>
-
-													</tr>
-
-												</tbody></table>
-
-
-
-
-
-												<!-- HERO IMAGE -->
-
-												<table border="0" cellpadding="0" cellspacing="0" width="100%" id="template-width" class="bodyContent">
-
-													<tbody><tr>
-
-														<td align="left" valign="top" width="100%" class="template-feature-container">
-
-															<table border="0" cellpadding="0" cellspacing="0" width="100%">
-
-														 		<tbody><tr>
-
-														 			<td align="left" style="padding-top:0px; width:100%;" class="largeImage">
-
-														 				<img id="param_img" class="largeImage" src="" max-width="100%">
-
-														 			</td>
-
-														 		</tr>
-
-															 </tbody></table>
-
-														 </td>
-
-													 </tr>
-
-												 </tbody></table>
-
-
-
-
-												 <!-- NEWSLETTER INTRODUCTION -->
-
-												 <table border="0" cellpadding="0" cellspacing="0" width="100%" id="template-width" class="bodyContent">
-
-												 	<tbody><tr>
-
-												 		<td align="left" style="padding-top:30px; padding-bottom:30px; display:block;">
-
-												 			<h2>Hi <span id="param_name">Kristof</span>, welcome to Tigerspike!</h2>
-
-												 			<span class="bodyContent">
-
-																<p>
-																We’re really happy to have you on board and we think you’ll be a great addition to the team. There are a couple of things to prepare for as you settle into your new role. We've included a link with a bit of information that might help you get to know the team, the business, and the area. Always feel free to ask any questions and again, welcome!
-																</p>
-
-															</span>
-
-															<h3>Alex Hall – President, Americas</h3>
-
-														</td>
-
-													</tr>
-
-												</tbody></table>
-
-
-
-
-												<!-- HEADER -->
-
-												<table border="0" cellpadding="0" cellspacing="0" width="100%" id="template-width" class="bodyContent">
-
-													<tbody><tr>
-
-														<td align="left" class="topic-break">
-
-															<h4>Some useful things to know...
-
-															</h4>
-
-														</td>
-
-													</tr>
-
-												</tbody></table>
-
-
-
-
-												<!-- USEFUL THINGS TO KNOW -->
-
-												<table border="0" cellpadding="0" cellspacing="0" width="100%" id="template-width" class="bodyContent">
-
-													<tbody><tr>
-
-														<!-- COLUMN 1 -->
-
-														<td align="left" valign="top" width="33%" class="templateColumnContainer" style="border-bottom:1px solid #BBBBBB;">
-
-															<table border="0" cellpadding="0" cellspacing="0" width="100%">
-
-																<tbody><tr>
-
-																	<td align="left" valign="top" class="col-1-content">
-																	
-																		<img src="./developer-intro_files/getfile(2).ashx" width="40">
-																		
-																		<h2 style="padding-top:15px;">Hours</h2>
-																		
-																		<h3>9:30-6:30</h3>
-
-																		<span class="bodyContent" style="line-height: 22px; font-size: 15px;">
-																			<p>
-																			Our usual hours are 9:30am to 5:30pm. Sometimes we're busier than usual, but we're always flexible.
-																			</p>
-																		</span>
-																	
-																	</td>
-
-																</tr>
-
-															</tbody></table>
-
-														</td>
-
-														<!-- COLUMN 2 -->
-
-														<td align="left" valign="top" width="33%" class="templateColumnContainer" style="border-bottom:1px solid #BBBBBB;">
-
-															<table border="0" cellpadding="0" cellspacing="0" width="100%">
-
-																<tbody><tr>
-
-																	<td align="left" valign="top" class="col-2-content">
-
-																		<img src="./developer-intro_files/getfile(3).ashx" width="40">
-
-																		<h2 style="padding-top:15px;">Your Seating</h2>
-
-																		<h3>The development team</h3>
-
-																		<span class="bodyContent">
-																		 	<p>
-																		 	You will be sitting next to <span id="param_neighbor">Tony Crosby</span>, one of our <span id="param_neighbor_type">developers</span> here in <span id="param_city">New York</span>.
-																			</p>
-																		</span>
-
-																	</td>
-
-																</tr>
-
-															</tbody></table>
-
-														</td>
-
-														<!-- COLUMN 3 -->
-
-														<td align="left" valign="top" width="33%" class="templateColumnContainer" style="border-bottom:1px solid #BBBBBB;">
-
-															<table border="0" cellpadding="0" cellspacing="0" width="100%">
-
-																<tbody><tr>
-
-																	<td align="left" valign="top" class="col-2-content">
-
-																		<img src="./developer-intro_files/getfile(4).ashx" width="40">
-
-																		<h2 style="padding-top:15px;">Dress Code</h2>
-
-																		<h3>Smart Creative</h3>
-
-																		<span class="bodyContent">
-																			<p>
-																			There is no dress code, but we all like to look sharp so wear what you deem appropriate.
-																			</p>
-																		</span>
-
-																	</td>
-
-																</tr>
-
-															</tbody></table>
-
-														</td>
-
-													</tr>
-
-												</tbody></table>
-
-
-
-
-
-												<!-- EMAIL ADDESS -->
-
-												<table border="0" cellpadding="0" cellspacing="0" width="100%" id="template-width" class="bodyContent" style="padding-bottom:0px;">
-
-													<tbody><tr>
-
-														<!-- COLUMN 1 -->
-
-														<td align="left" valign="top" width="50%" class="templateColumnContainer" style="border-bottom:1px solid #BBBBBB;">
-
-															<table border="0" cellpadding="0" cellspacing="0" width="100%">
-
-																<tbody><tr>
-
-																	<td align="left" valign="top" class="col-1-content">
-
-																		<h2>Email Address</h2>
-
-																		<h3>Active directory domain credentials</h3>
-
-																		<span class="email-panel">
-
-																			<img src="./developer-intro_files/getfile(5).ashx" class="centered" width="40">
-
-																			<br>
-
-																			<a id="param_email_link" href="mailto:kristof.dziemianczyk@tigerspike.com">
-																				<span id="param_email">kristof.dziemianczyk@tigerspike.com</span>
-																			</a>
-
-																		</span>
-
-																	</td>
-
-																</tr>
-
-															</tbody></table>
-
-														</td>
-
-														<!-- COLUMN 2 -->
-
-														<td align="left" valign="top" width="50%" class="templateColumnContainer" style="border-bottom:1px solid #BBBBBB;">
-
-															<table border="0" cellpadding="0" cellspacing="0" width="100%">
-
-																<tbody><tr>
-
-																	<td align="left" valign="top" class="col-2-content">
-
-																		<span class="bodyContent">
-
-																			<p style="padding-top:50px">
-																				Your email address is hosted by Google.<br>
-																		 		These credentials will give you access to a number of Google services including:<br>
-																		 		<strong>1. Gmail</strong><br>
-																		 		<strong>2. Calendar</strong><br>
-																		 		<strong>3. (Google) Drive</strong>
-																		 	</p>
-
-																		</span>
-
-																	</td>
-
-																</tr>
-
-															</tbody></table>
-
-														</td>
-
-													</tr>
-
-												</tbody></table>
-
-
-
-												<!-- MEET THE TEAM -->
-
-												<table border="0" cellpadding="0" cellspacing="0" width="100%" id="template-width" class="bodyContent" style="padding-bottom:40px;">
-
-													<tbody><tr>
-
-														<td align="left" valign="top" class="col-1-content" colspan="4">
-
-															<h2>Meet the team</h2>
-
-															<p>We are a friendly bunch of folk and formal intros will be conducted on your first day.
-															For future reference, here are the names and emails of each department lead.
-															</p>
-
-														</td>
-
-													</tr>
-
-													<tr>
-
-														<!-- COLUMN 1 -->
-
-														<td align="left" valign="top" width="25%" class="templateColumnContainer">
-
-															<table border="0" cellpadding="0" cellspacing="0" width="100%">
-
-																<tbody><tr>
-
-																	<td align="left" valign="top">
-
-																		<img src="./developer-intro_files/getfile(6).ashx" width="40">
-
-																		<h4 style="padding-top:15px; padding-bottom:10px; color:#575857;">Commercial</h4>
-																			
-																		<span><h4><a href="mailTo:alex@tigerspike.com" style="text-decoration:underline;">Alex Hall</a></h4></span>
-
-																	</td>
-
-																</tr>
-
-															</tbody></table>
-
-														</td>
-
-														<!-- COLUMN 2 -->
-
-														<td align="left" valign="top" width="25%" class="templateColumnContainer">
-
-															<table border="0" cellpadding="0" cellspacing="0" width="100%">
-
-																<tbody><tr>
-
-																	<td align="left" valign="top">
-
-																		<img src="./developer-intro_files/getfile(7).ashx" width="40">
-
-																		<h4 style="padding-top:15px; padding-bottom:10px; color:#575857;">Technology</h4>
-																		
-																		<span><h4><a href="mailTo:christian.gloverwilson@tigerspike.com" style="text-decoration:underline;">Christian Glover Wilson</a></h4></span>
-
-																	</td>
-
-																</tr>
-
-															</tbody></table>
-
-														</td>
-
-														<!-- COLUMN 3 -->
-
-														<td align="left" valign="top" width="25%" class="templateColumnContainer">
-
-															<table border="0" cellpadding="0" cellspacing="0" width="100%">
-
-																<tbody><tr>
-
-																	<td align="left" valign="top">
-
-																		<img src="./developer-intro_files/getfile(8).ashx" width="40">
-
-																		<h4 style="padding-top:15px; padding-bottom:10px; color:#575857;">Production</h4>
-																		
-																		<span><h4><a href="mailTo:marina.lee@tigerspike.com" style="text-decoration:underline;">Marina Lee</a></h4></span>
-
-																	</td>
-
-																</tr>
-
-															</tbody></table>
-
-														</td>
-
-														<!-- COLUMN 4 -->
-
-														<td align="left" valign="top" width="25%" class="templateColumnContainer">
-
-															<table border="0" cellpadding="0" cellspacing="0" width="100%">
-
-																<tbody><tr>
-
-																	<td align="left" valign="top">
-
-																		<img src="./developer-intro_files/getfile(9).ashx" width="40">
-
-																		<h4 style="padding-top:15px; padding-bottom:10px; color:#575857;">Design</h4>
-																		
-																		<span><h4><a href="mailTo:dominique.lee@tigerspike.com" style="text-decoration:underline;">Dominique Lee</a></h4></span>
-
-																	</td>
-
-																</tr>
-
-															</tbody></table>
-
-														</td>
-
-													</tr>
-
-												</tbody></table>
-
-
-
-
-												<!-- RAMP UP BUDDY -->
-
-												<table border="0" cellpadding="0" cellspacing="0" width="100%" id="template-width" class="bodyContent">
-
-													<tbody><tr>
-
-														<td align="left" style="padding-top:30px; padding-bottom:30px; display:block; border-top:1px solid #BBBBBB;">
-
-															<h2>Ramp-up buddy</h2>
-
-															<h3>Someone to show you the ropes</h3>
-
-															<span class="bodyContent">
-
-																<p>
-																Tony here in New York and Paul Kwak in San Francisco will your first immediate project contacts. Over the next few months as more projects unfold, you will become better acquainted with various team members. For all office and HR related inquiries, Taisha is your best friend.
-																</p>
-
-															</span>
-
-														</td>
-
-													</tr>
-
-												</tbody></table>
-
-
-								<!-- END SECTION 1 -->
-								
-								<!-- BLUE AREA -->
-								
-									<table border="0" cellpadding="20" cellspacing="0" width="100%" id="templateFooterBG" style="background-color:#e3ebf4; padding-bottom:40px;">
-								
-									<tr>
-									
-										<td align="center" valign="top" style="padding-bottom:0px;">
-											
-											<table border="0" cellpadding="0" cellspacing="0" width="100%" id="template-width" class="bodyContent" style="border-bottom:1px solid #BBBBBB;">
-
-												 	<tr>
-												 	
-												 		<td align="left" valign="top" width="100%" style="max-width:450px; padding-top:30px; ">
-
-															<h2 style="color:#525252; letter-spacing:-0.5px;">
-
-																<span>A word on development</span>
-
-															</h2>
-
-															<h2 style="color:#525252; letter-spacing:-0.5px; font-weight:normal;"><span>Best practices, latest trends, and the importance of team knowledge</span></h2>
-
-															<p>Our development culture is very collaborative and open. As a member of the development team you're encouraged to share insights and ideas, latest coding techniques and best practices, architecture critiques, or even just discussing the latest platform APIs or trends to be continually raising the bar of what is technically possible.</p>
-
-															<p>Knowledge can be gained by curiosity – don’t be afraid to ask when you don’t know something. There’ll be areas where your knowledge is deeper than others, and together we can become a stronger team by encouraging open and honest discussion, and striving to be at the forefront of technology.</p>
-
-														</td>
-
-												 	</tr>
-
-												 </table>
-
-												 <table border="0" cellpadding="0" cellspacing="0" width="100%" class="bodyContent template-width" style="width:100%; max-width:600px; line-height: 22px; font-size: 15px;">
-												 
-												 	<tr>
-												 	
-												 		<!-- ENTRY 1 -->
-												 		
-												 		<td align="left" valign="top" width="50%" class="templateColumnContainer">
-												 		
-												 			<table border="0" cellpadding="0" cellspacing="0" width="100%">
-												 			
-												 				<tr>
-												 				
-												 					<td align="left" valign="top" class="col-1-content" style="padding-top:25px; padding-right:15px; padding-bottom:25px;">
-												 					
-												 						<img src="http://datacapture.sites.tigerspike.com.au/getfile.ashx?id=7299" width="40">
-												 						
-												 						<h2 style="padding-top:15px;">Core Tools</h2>
-												 						
-												 						<h3>Eclipse, Android Studio, Git clients</h3>
-												 						
-												 						<span class="bodyContent" style="line-height: 22px; font-size: 15px;">
-												 						
-													 						<p>
-													 							We currently use Eclipse for Android development, but will soon be moving to Android Studio. The choice of Git client is up to you, but within the team SmartGit and GitBox are commonly used. If there are any tools you’ve used which you think would be useful to share with the team, we encourage you to share any learnings you have.
-													 						</p>
-												 						
-												 						</span>
-												 						
-												 					</td>
-												 					
-												 				</tr>
-												 				
-												 			</table>
-
-														</td>
-
-														<!-- ENTRY 2 -->
-														
-														<td align="left" valign="top" width="50%" class="templateColumnContainer">
-														
-															<table border="0" cellpadding="0" cellspacing="0" width="100%">
-															
-																<tr>
-																
-																	<td align="left" valign="top" class="col-2-content" style="padding-top:25px; padding-left:15px; padding-bottom:25px;">
-																	
-																		<img src="http://datacapture.sites.tigerspike.com.au/getfile.ashx?id=7298" width="40">
-																		
-																		<h2 style="padding-top:15px;">Keeping up-to-date</h2>
-																		
-																		<h3>Online resources, meetups, events</h3>
-																		
-																		<span class="bodyContent" style="line-height: 22px; font-size: 15px;">
-																		
-																			<p>
-																				Staying in touch with industry news, events, tools and emerging trends is really important to us. We encourage you to attend meetups and events, keep up to date with the online research, and share any knowledge with the team by means of lunch and learns, development team sessions or by contributing to our company wide <a href="https://sites.google.com/a/tigerspike.com/developers/" target="_blank">development wiki.</a>
-																			</p>
-																			
-																		</span>
-																		
-																	</td>
-																	
-																</tr>
-																
-															</table>
-															
-														</td>
-
-												 	</tr>
-
-												</table>
-												
-												<!-- ENTRY 2 -->
-												
-												
-												
-											</td>
-											
-										</tr>
-										
-									</table>
-
-									<!-- TIGERSPIKE FOOTER -->
-
-									<table border="0" cellpadding="0" cellspacing="20" width="100%" id="bodyTable">
-
-										<tbody><tr>
-
-											<td align="center" valign="top">
-
-												<table border="0" cellpadding="0" cellspacing="0" width="100%" id="template-width" class="bodyContent">
-
-													<tbody><tr>
-
-														<td align="left" style="padding-top:30px; padding-bottom:0px; display:block;">
-
-															<h2>Local area</h2>
-
-															<span class="bodyContent">
-
-																<p>
-																 	What can we say, it's New York! The world may be at your fingertips, but it might still be good to know  a few local favorites. Here's a few, and we hope you can help add to the list.
-																</p>
-
-															</span>
-
-														</td>
-
-													</tr>
-
-												</tbody></table>
-
-												<table border="0" cellpadding="0" cellspacing="0" width="100%" id="template-width" class="bodyContent">
-
-													<tbody><tr>
-
-														<!-- ENTRY 1 -->
-
-														<td align="left" valign="top" width="25%" class="templateColumnContainer" style="padding-bottom:50px;">
-
-															<table border="0" cellpadding="0" cellspacing="0" width="100%">
-
-																<tbody><tr>
-
-																	<td align="left" valign="top">
-
-																		<img src="./developer-intro_files/getfile(13).ashx" width="40">
-
-																		<h4 style="padding-top:15px; ">Coffee</h4>
-
-																		<p>
-																			Grumpys<br />
-																			The Commons<br />
-																			Tobys<br />
-																			<br />
-																			
-																		<p>
-
-																	</p></td>
-
-																</tr>
-
-															</tbody></table>
-
-														</td>
-
-														<!-- ENTRY 2 -->
-
-														<td align="left" valign="top" width="25%" class="templateColumnContainer" style="padding-bottom:50px;">
-
-															<table border="0" cellpadding="0" cellspacing="0" width="100%">
-
-																<tbody><tr>
-
-																	<td align="left" valign="top">
-
-																		<img src="./developer-intro_files/getfile(14).ashx" width="40">
-
-																		<h4 style="padding-top:15px; ">Lunch</h4>
-
-																		<p>
-																			Dig Inn<br />
-																			Chelsea Market<br />
-																			The Hummus & Pita Co<br />
-																			Asuka Sushi<br />
-																		<p>
-
-																 </p></td>
-
-																</tr>
-
-															</tbody></table>
-
-														</td>
-
-														<!-- ENTRY 3 -->
-
-														<td align="left" valign="top" width="25%" class="templateColumnContainer" style="padding-bottom:50px;">
-
-															<table border="0" cellpadding="0" cellspacing="0" width="100%">
-
-																<tbody><tr>
-
-																	<td align="left" valign="top">
-
-																		<img src="./developer-intro_files/getfile(15).ashx" width="40">
-
-																		<h4 style="padding-top:15px; ">Dinner</h4>
-
-																		<p>
-																			Westville<br />
-																			Cafeteria<br />
-																			Rocking Horse<br />
-																			Ootoya
-																		<p>
-
-																	</p></td>
-
-																</tr>
-
-															</tbody></table>
-
-														</td>
-
-														<!-- ENTRY 4 -->
-
-														<td align="left" valign="top" width="25%" class="templateColumnContainer" style="padding-bottom:50px;">
-
-															<table border="0" cellpadding="0" cellspacing="0" width="100%">
-
-																<tbody><tr>
-
-																	<td align="left" valign="top">
-
-																		<img src="./developer-intro_files/getfile(16).ashx" width="40">
-
-																		<h4 style="padding-top:15px; ">Bars</h4>
-
-																		<p>
-																			The Grey Dog<br />
-																			Flatiron Hall<br />
-																			Flight 151<br />
-																			Bunga's Den
-																		<p>
-
-																	</p></td>
-
-																</tr>
-
-															</tbody></table>
-
-														</td>
-
-													</tr>
-
-												</tbody></table>
-
-
-
-
-
-											 	<!-- FOOTER -->
-
-											 	<table border="0" cellpadding="0" cellspacing="0" width="100%" id="template-width" class="footerContent">
-
-											 		<tbody><tr>
-
-											 			<td style="padding-top:50px; padding-bottom:30px; border-top:1px solid #BBBBBB;">
-
-											 				<a href="http://www.tigerspike.com/" style="text-decoration:none;"><img src="./developer-intro_files/getfile.ashx" width="183" alt="Tigerspike"></a>
-
-											 			</td>
-
-											 		</tr>
-
-											 		<tr>
-
-											 			<td class="footerContent" style=" padding-bottom:35px; ">
-
-											 				<p style="font-weight:bold;">
-
-											 					<span style="padding-right:10px;">New York</span>
-
-											 					<span style="padding-right:10px;">San Francisco</span>
-
-															 	<span style="padding-right:10px;">London</span>
-
-															 	<span style="padding-right:10px;">Dubai</span>
-
-															 	<span style="padding-right:10px;">Sydney</span>
-
-															 	<span style="padding-right:10px;">Melbourne</span>
-
-															 	<span style="padding-right:10px;">Singapore</span>Tokyo
-
-															</p>
-
-															<p>
-
-																<span>Copyright © 2014 Tigerspike Pty Ltd, All rights reserved.</span><br>
-
-															</p>
-
-
-
-															<p>
-
-																<span style="color:#cfcfcf;">Designed in New York :-)</span>
-
-															</p>
-
-														</td>
-
-													</tr>
-
-												</tbody></table>
-
-											</td>
-
-										</tr>
-
-									</tbody></table>
-
-								</td>
-
-							</tr>
-
-						</tbody></table>
-
-						<!-- END EMAIL CONTAINER -->
-
-					</td>
-
-				</tr>
-
-			</tbody></table>
-
-		
-
-</body></html>
+	<body>
+		<section class="wrapper">
+
+			<!-- universale: logo -->
+			<div class="logo-row">
+				<a class="logo" href="http://www.tigerspike.com/" alt="Tigerspike">
+					<img src="img/logo.png" />
+				</a>
+			</div>
+
+
+			<!-- universal: hero image - #param_img -> &img=[filename.png] -->
+
+			<div class="hero-container">
+				<img id="param_img" class="hero-image" src="" />
+			</div>
+
+
+			<!-- universal: welcome messaage - #param_name -> &n=[first_name] -->
+
+			<div class="welcome-message row">
+ 				<h3>Hi <span id="param_name">Kristof</span>, welcome to Tigerspike!</h3>
+				<p>We’re really happy to have you on board and we think you’ll be a great addition to the team. There are a couple of things to prepare for, covering your first few weeks. Principal among those to discuss is your schedule for the following week and to ensure that there are a number of introductory sessions lined-up. In lieu of that discussion, here are some of the big ticket items to muse on or refer back to whilst you settle in.</p>
+
+				<aside>Alex Hall – President, Americas</aside>
+			</div>
+
+
+			<!-- universal: useful things - #param_name -> &n=[first_name] -->
+
+			<div class="useful-things">
+				<h3 class="heading-divider">Some useful things to know...</h3>
+
+				<div class="bullets">
+
+					  <div class="bullet three-col-bullet">
+					    <div class="bullet-icon bullet-icon-1">
+					      <img src="img/clock.png" alt="">
+					    </div>
+					    <div class="bullet-content">
+					      <h4>Hours</h4>
+					      <aside>9:30-6:30</aside>
+					      <p>Our usual hours are 9:30am to 6:30pm. Sometimes we're busier than usual, but we're always flexible.</p>
+					    </div>
+					  </div>
+
+					  <div class="bullet three-col-bullet">
+					    <div class="bullet-icon bullet-icon-1">
+					      <img src="img/easel.png" alt="">
+					    </div>
+					    <div class="bullet-content">
+					      <h4>Your Seating</h4>
+					      <aside>The <span id="param_dept"></span> team</aside>
+					      <p>You will be sitting next to <span id="param_neighbor">Tony Crosby</span>, one of our <span id="param_neighbor_type">developers</span> here in <span id="param_city">New York</span></p>
+					    </div>
+					  </div>
+
+					  <div class="bullet three-col-bullet">
+					    <div class="bullet-icon bullet-icon-1">
+					      <img src="img/collar.png" alt="">
+					    </div>
+					    <div class="bullet-content">
+					      <h4>Dress Code</h4>
+					      <aside>Smart Creative</aside>
+					      <p>There is no dress code, but we all like to look sharp so wear what you deem appropriate.</p>
+					    </div>
+					  </div>
+
+				</div>
+			</div>
+
+			<div class="email-address">
+				<div class="side-image">
+					<div class="images-wrapper"></div>
+					<div class="content">
+						<h4>Email Address</h4>
+						<aside><a id="param_email_link" href="mailto:kristof.dziemianczyk@tigerspike.com"><span id="param_email">kristof.dziemianczyk@tigerspike.com</span></a></aside>
+						<p>Your email address is hosted by Google. These credentials will give you access to a number of Google services including:</p>
+				 		<ul>
+				 			<li><strong>1. Gmail</strong></li>
+				 			<li><strong>2. Calendar</strong></li>
+				 			<li><strong>3. (Google) Drive</strong></li>
+				 		</ul>
+					</div>
+				</div>
+			</div>
+
+<!-- MEET THE TEAM -->
+
+			<div class="meet-team">
+
+				<h3 class="heading-divider">Meet the team</h3>
+
+				<p>We are a friendly bunch of folk and formal intros will be conducted on your first day. For future reference, here are the names and emails of each department lead.
+				</p>
+
+				<div class="bullets">
+
+					  <div class="bullet four-col-bullet">
+					    <div class="profile-pic">
+					      <img src="img/alex_hall.jpg" alt="">
+					    </div>
+					    <div class="bullet-content">
+					      <h4>Commercial</h4>
+					      <aside><a href="mailTo:alex@tigerspike.com">Alex Hall</a></aside>
+					    </div>
+					  </div>
+
+					  <div class="bullet four-col-bullet">
+					    <div class="profile-pic">
+					      <img src="img/christian_wilson.jpg" alt="">
+					    </div>
+					    <div class="bullet-content">
+					      <h4>Technology</h4>
+					      <aside><a href="mailTo:christian.gloverwilson@tigerspike.com">Christian Glover Wilson</a></aside>
+					    </div>
+					  </div>
+
+					  <div class="bullet four-col-bullet">
+					    <div class="profile-pic">
+					      <img src="img/zahra_qayoom.jpg" alt="">
+					    </div>
+					    <div class="bullet-content">
+					      <h4>Production</h4>
+					      <aside><a href="mailTo:zahra.qayoom@tigerspike.com">Zahra Qayoom</a></aside>
+					    </div>
+					  </div>
+
+					  <div class="bullet four-col-bullet">
+					    <div class="profile-pic">
+					      <img src="img/dom_lee.jpg" alt="">
+					    </div>
+					    <div class="bullet-content">
+					      <h4>Design</h4>
+					      <aside><a href="mailTo:dominique.lee@tigerspike.com">Dominique Lee</a></aside>
+					    </div>
+					  </div>
+
+				</div>
+
+				<div class="bullets">
+					<div class="bullet one-col-bullet">
+					    <div class="bullet-icon bullet-icon-1">
+					      <img src="img/bowtie.png" alt="">
+					    </div>
+					    <div class="bullet-content">
+					    	<h4>Ramp-up buddy</h4>
+					      	<aside>Someone to show you the ropes</aside>
+					      	<p>Your go-to buddy here in New York will be <span id="param_buddy"></span>. Over the next few months as more projects unfold, you will become better acquainted with various team members. For all office and HR related inquiries, Taisha is your best friend.</p>
+					    </div>
+					</div>
+				</div>
+
+			</div>
+		</section>
+
+<!-- d=developer -->
+		<div id="developer" class="blue-area">
+			<section class="wrapper">
+
+				<div class="role-notes">
+					<h3 class="heading-divider">A word on development</h3>
+					<aside>Best practices, latest trends, and the importance of team knowledge</aside>
+
+					<p>Our development culture is very collaborative and open. As a member of the development team you're encouraged to share insights and ideas, latest coding techniques and best practices, architecture critiques, or even just discussing the latest platform APIs or trends to be continually raising the bar of what is technically possible.</p>
+
+					<p>Knowledge can be gained by curiosity – don’t be afraid to ask when you don’t know something. There’ll be areas where your knowledge is deeper than others, and together we can become a stronger team by encouraging open and honest discussion, and striving to be at the forefront of technology.</p>
+				</div>
+
+				<div id="android" class="tools">
+
+					<div class="bullets">
+
+						<div class="bullet two-col-bullet">
+							<div class="bullet-icon bullet-icon-1">
+						    	<img src="img/wrench.png" alt="">
+						    </div>
+						    <div class="bullet-content">
+						    	<h4>Core Tools</h4>
+						    	<aside>Eclipse, Android Studio, Git clients</aside>
+						    	<p>We currently use Eclipse for Android development, but will soon be moving to Android Studio. The choice of Git client is up to you, but within the team SmartGit and GitBox are commonly used. If there are any tools you’ve used which you think would be useful to share with the team, we encourage you to share any learnings you have.</p>
+						    </div>
+						</div>
+
+						<div class="bullet two-col-bullet">
+							<div class="bullet-icon bullet-icon-1">
+						    	<img src="img/update.png" alt="">
+						    </div>
+						    <div class="bullet-content">
+						    	<h4>Keeping up-to-date</h4>
+						    	<aside>Keeping up-to-date</aside>
+						    	<p>Staying in touch with industry news, events, tools and emerging trends is really important to us. We encourage you to attend meetups and events, keep up to date with the online research, and share any knowledge with the team by means of lunch and learns, development team sessions or by contributing to our company wide <a href="https://sites.google.com/a/tigerspike.com/developers/" target="_blank">development wiki</a>.</p>
+						    </div>
+						</div>
+
+					</div>
+				</div>
+			</section>
+		</div>
+
+		<!-- d=experience -->
+		<div id="experience" class="blue-area">
+			<section class="wrapper">
+
+				<div class="role-notes">
+					<h3 class="heading-divider">What it means to be an Experience Designer</h3>
+					<aside>Best practices, latest trends, and the importance of team knowledge</aside>
+
+					<p>You will define, create and evaluate useful, usable and intelligent digital products from strategy → ux → prototyping.</p>
+
+					<p>The Experience  Design team is very open and collaborative. As a member of the team you’ll be encouraged to share insights and ideas, participate at internal reviews and workshops and reach out if you need help (#safespace).</p>
+
+				</div>
+				<!-- r=UX -->
+				<div id="ux" class="tools">
+
+					<div class="bullets">
+
+						<div class="bullet two-col-bullet">
+							<div class="bullet-icon bullet-icon-1">
+						    	<img src="img/wrench.png" alt="">
+						    </div>
+						    <div class="bullet-content">
+						    	<h4>Core Tools</h4>
+						    	<aside>The experience canvas</aside>
+						    	<ul>
+						    		<li>Experience Design - Sketching, Omnigraffle, Sketch, InVision</li>
+									<li>Collaboration - Evernote and Slack</li>
+									<li>Project Management - Basecamp, Google Docs, Netsuite</li>
+								</ul>
+						    </div>
+						</div>
+
+						<div class="bullet two-col-bullet">
+							<div class="bullet-icon bullet-icon-1">
+						    	<img src="img/update.png" alt="">
+						    </div>
+						    <div class="bullet-content">
+						    	<h4>Keeping up-to-date</h4>
+						    	<aside>The TS Experience blog</aside>
+						    	<p>Staying in touch with industry new, events, tools and emerging trends is really important to us. Feel free to share insights on our global <a href="https://plus.google.com/communities/103201087109793653790" target="_blank">Experience Design Blog</a>.</p>
+						    </div>
+						</div>
+
+					</div>
+				</div>
+				<!-- end r=UX -->
+
+				<!-- r=UI -->
+
+				<div id="ui" class="tools">
+					<p>At Tigerspike we do our best to think in Design Systems, and not just comps. This means working with moodboards, style tiles, components, templates, and prototypes. For some background information, there are lots of resources out there. Check out Brad Frost's description of <a href="http://bradfrost.com/blog/post/atomic-web-design/">Atomic Design</a>, this explanation of <a href="https://www.previousnext.com.au/blog/style-guide-driven-development-new-web-development">Style-Guide-Driven development</a>, a mailchimp-ux issue about <a href="http://us5.campaign-archive1.com/?u=7e093c5cf4&id=ead8a72012&e=ecb25a3f93">systematic design</a>, and one of our own designer's post on the <a href="http://www.tigerspike.com/blog/2014/09/22/iphone-6-need-design-system/">Tigerspike blog</a>.</p>
+					<p>Think of yourself as an architect: you are designing a complex system that must make sense to both engineers and users. A building rendering that is beautiful but shows no understanding of materials, construction or budget won't get the designer very far. Similarly, a few slick interface designs without an appreciation for platform constraints or implementation will end in a final product far from expectations.</p>
+					<p>Below are some of the tools of our trade, as well as some resources to help stay on top of our ever-changing industry.</p>
+					<div class="bullets">
+
+						<div class="bullet two-col-bullet">
+							<div class="bullet-icon bullet-icon-1">
+						    	<img src="img/wrench.png" alt="">
+						    </div>
+						    <div class="bullet-content">
+						    	<h4>Core Tools</h4>
+						    	<aside>The experience canvas</aside>
+						    	<ul>
+						    		<li><strong>Visual Design</strong> - Pen & Paper, Photoshop/Illustrator, Sketch</li>
+						    		<li><strong>Prototyping</strong> – Invision, html/css, (under consideration: Pixate, framer.js)
+									<li><strong>Collaboration</strong> - Evernote and Slack</li>
+									<li><strong>Project Management</strong> - Basecamp, Google Docs, Netsuite</li>
+								</ul>
+						    </div>
+						</div>
+
+						<div class="bullet two-col-bullet">
+							<div class="bullet-icon bullet-icon-1">
+						    	<img src="img/update.png" alt="">
+						    </div>
+						    <div class="bullet-content">
+						    	<h4>Keeping up-to-date</h4>
+						    	<aside>The TS Experience blog</aside>
+						    	<p>Staying in touch with industry new, events, tools and emerging trends is really important to us. Feel free to share insights on our global <a href="https://plus.google.com/communities/103201087109793653790" target="_blank">Experience Design Blog</a>. We also like to use the <a href="https://chrome.google.com/webstore/detail/panda-hacker-news-dribbbl/jhiocdmmaannaccoofjfmjpbfkogmnap?hl=en">Panda Chrome Extension</a> to get some daily inspiration from Designer News, Dribbble, Behance and the like.</p>
+						    </div>
+						</div>
+
+					</div>
+				</div>
+
+				<!-- end r=UI -->
+
+			</section>
+		</div>
+
+		<!-- Checklist -->
+		<section class="wrapper">
+
+			<div class="local-area">
+
+				<h3 class="heading-divider">Goals for the first week</h3>
+
+				<ol class="checklist">
+					<li>Initial "One on One" Meeting with Dominique Lee</li>
+					<li>Induction walk-through with Taisha Heimberg</li>
+					<li>Download Kisi app for access to the building and office</li>
+					<li>Fill in new hire paperwork (Taisha to assist with this): Tigerspike personnel & Tax/Payment documentation</li>
+					<li>Organize email filters and generate your email signature</li>
+					<li>Send me a brief bio and photo that will be included in an all company new starter notice</li>
+					<li>For the first week we would appreciate if you can bring your personal laptp to the office. Colby will be setting up your new Mac for you.</li>
+					<li>Familiarise yourself with Tigerspike office processes and personnel</li>
+					<li>Be confident on your roles and responsibilities in terms of UI and UX</li>
+					<li>Have fun!</li>
+				</ol>
+			</div>
+		</section>
+
+		<!-- end Checklist -->
+
+		<section class="wrapper">
+
+			<div class="local-area">
+
+				<h3 class="heading-divider">Local area</h3>
+					<p>What can we say, it's New York! The world may be at your fingertips, but it might still be good to know  a few local favorites. Here's a few, and we hope you can help add to the list.</p>
+
+				<div class="bullets">
+
+					<div class="bullet four-col-bullet">
+						<div class="bullet-icon bullet-icon-1">
+							<img src="img/coffee.png" alt="">
+						</div>
+						<div class="bullet-content">
+							<h4>Coffee</h4>
+							<ul>
+								<li>Grumpys</li>
+								<li>The Commons</li>
+								<li>Tobys</li>
+							</ul>
+						</div>
+				  	</div>
+
+					<div class="bullet four-col-bullet">
+						<div class="bullet-icon bullet-icon-1">
+							<img src="img/burger.png" alt="">
+						</div>
+						<div class="bullet-content">
+							<h4>Lunch</h4>
+							<ul>
+								<li>Dig Inn</li>
+								<li>Chelsea Market</li>
+								<li>The Hummus & Pita Co</li>
+								<li>Asuka Sushi</li>
+							</ul>
+						</div>
+				  	</div>
+
+				  	<div class="bullet four-col-bullet">
+						<div class="bullet-icon bullet-icon-1">
+							<img src="img/forks.png" alt="">
+						</div>
+						<div class="bullet-content">
+							<h4>Dinner</h4>
+							<ul>
+								<li>Westville</li>
+								<li>Cafeteria</li>
+								<li>Rocking Horse</li>
+								<li>Ootoya</li>
+							</ul>
+						</div>
+				  	</div>
+
+				  	<div class="bullet four-col-bullet">
+						<div class="bullet-icon bullet-icon-1">
+							<img src="img/bars.png" alt="">
+						</div>
+						<div class="bullet-content">
+							<h4>Bars</h4>
+							<ul>
+								<li>The Grey Dog</li>
+								<li>Flatiron Hall</li>
+								<li>Flight 151</li>
+								<li>Bunga's Den</li>
+							</ul>
+						</div>
+				  	</div>
+
+				</div>
+			</div>
+
+	<!-- FOOTER -->
+
+			<footer>
+				<div class="footer-logo">
+					<a href="http://www.tigerspike.com/" style="text-decoration:none;"><img src="img/logo.png" width="183" alt="Tigerspike"></a>
+				</div>
+				<ul class="country-list">
+					<li>New York</li>
+					<li>San Francisco</li>
+					<li>London</li>
+					<li>Dubai</li>
+					<li>Sydney</li>
+					<li>Melbourne</li>
+					<li>Singapore</li>
+					<li>Tokyo</li>
+				</ul>
+				<div class="copyright">
+					<small>Copyright © 2014 Tigerspike Pty Ltd, All rights reserved.</small>
+				</div>
+			</footer>
+		</section>
+	</body>
+</html>
